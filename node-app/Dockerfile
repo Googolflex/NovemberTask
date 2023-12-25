@@ -1,13 +1,9 @@
-FROM node:12
+FROM node:14
+
+COPY . /app
 
 WORKDIR /app
 
-COPY package*.json ./
-
 RUN npm install
 
-COPY . .
-
-EXPOSE 3030
-
-CMD [ "npm", "start" ]
+CMD ["node", "index.js"]
